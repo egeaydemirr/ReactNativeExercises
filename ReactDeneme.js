@@ -41,18 +41,49 @@
 //ReactDOM.render 
 // Here's a refresher on the syntax: ReactDOM.render(componentToRender, targetNode). The first argument is the React component that you want to render. The second argument is the DOM node that you want to render that component within.
 
-class MyComponent extends React.Component {
-  constructor(props){
+// class MyComponent extends React.Component {
+//   constructor(props){
+//     super(props);
+//   };
+//   render(){
+//     return(
+//       <div>
+//         <h1>
+//           Hello React Component!
+//         </h1>
+//       </div>
+//     );
+//   };
+// };
+// ReactDOM.render(<MyComponent />, document.getElementById("challenge-node"))
+
+
+
+//ACCESS PROPS USING this.props
+class App extends React.Component {
+  constructor(props) {
     super(props);
-  };
-  render(){
-    return(
-      <div>
-        <h1>
-          Hello React Component!
-        </h1>
-      </div>
+
+  }
+  render() {
+    return (
+        <div>
+            <Welcome name="Ege"/>
+        </div>
     );
-  };
+  }
 };
-ReactDOM.render(<MyComponent />, document.getElementById("challenge-node"))
+
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+          <p>Hello, <strong>{this.props.name}</strong>!</p>
+        </div>
+    );
+  }
+};
