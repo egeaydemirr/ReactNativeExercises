@@ -113,3 +113,33 @@
 // Camper.propTypes = {
 //   name: PropTypes.string.isRequired
 // }
+
+
+
+// Create a Stateful Component ***
+
+// You create state in a React component by declaring a state property on the component class in its constructor.
+// This initializes the component with state when it is created. The state property must be set to a JavaScript object. Declaring it looks like this:
+// this.state = {
+
+// }
+
+// EX:
+
+// class StatefulComponent extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     // Only change code below this line
+// this.state = {
+//     firstName : "Ege"
+// }
+//     // Only change code above this line
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <h1>{this.state.firstName}</h1>
+//       </div>
+//     );
+//   }
+// };
