@@ -59,31 +59,34 @@
 
 
 
-//ACCESS PROPS USING this.props
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+// //ACCESS PROPS USING this.props
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props);
 
-  }
-  render() {
-    return (
-        <div>
-            <Welcome name="Ege"/>
-        </div>
-    );
-  }
-};
+//   }
+//   render() {
+//     return (
+//         <div>
+//             <Welcome name="Ege"/>
+//         </div>
+//     );
+//   }
+// };
 
-class Welcome extends React.Component {
-  constructor(props) {
-    super(props);
+// class Welcome extends React.Component {
+//   constructor(props) {
+//     super(props);
 
-  }
-  render() {
-    return (
-        <div>
-          <p>Hello, <strong>{this.props.name}</strong>!</p>
-        </div>
-    );
-  }
-};
+//   }
+//   render() {
+//     return (
+//         <div>
+//           <p>Hello, <strong>{this.props.name}</strong>!</p>
+//         </div>
+//     );
+//   }
+// };
+
+
+// Review Using Props with Stateless Functional Components
