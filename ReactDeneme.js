@@ -116,7 +116,7 @@
 
 
 
-// Create a Stateful Component ***
+// Create a Stateful Component ***    For Documentation------->>>>>> https://www.freecodecamp.org/news/what-is-state-in-react-explained-with-examples/
 
 // You create state in a React component by declaring a state property on the component class in its constructor.
 // This initializes the component with state when it is created. The state property must be set to a JavaScript object. Declaring it looks like this:
@@ -149,23 +149,104 @@
 // Render State in the User Interface Another Way
 
 
+// class MyComponent extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       name: 'freeCodeCamp'
+//     }
+//   }
+//   render() {
+//     // Change code below this line
+// const name = this.state.name;
+//     // Change code above this line
+//     return (
+//       <div>
+//         { /* Change code below this line */ }
+// <h1>{name}</h1>
+//         { /* Change code above this line */ }
+//       </div>
+//     );
+//   }
+// };
+
+
+// Set State with this.setState ***
+
+// React expects you to never modify state directly, instead always use this.setState() when state changes occur.
+// There is also a way to change the component's state.
+// React provides a method for updating component state called setState. 
+
+// For instance, if we were storing a username in state and wanted to update it, it would look like this:
+
+// this.setState({
+//   username: 'Lewis'
+// });
+//EX:
+
+// class MyComponent extends React.Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       name: "Initial State"
+//     };
+//     this.handleClick = this.handleClick.bind(this)
+//   }
+//   handleClick(){
+//     this.setState({
+//       name: "React Rocks!!!"
+//     })
+//   }
+//   render(){
+//     return(
+//       <div>
+//         <button onClick={this.handleClick}>Click Me</button>
+//         <h1>{this.state.name}</h1>
+//       </div>
+//     )
+//   }
+// }
+
+
+
+// Use State to Toggle an Element
+//Ex:
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'freeCodeCamp'
+      visibility: false
+    };
+    // Change code below this line
+this.toggleVisibility = this.toggleVisibility.bind(this)
+    // Change code above this line
+  }
+  // Change code below this line
+toggleVisibility(){
+  this.setState(state =>{
+    if(state.visibility === true){
+      return {visibility: false}
+    }
+    else{
+      return{visibility: true}
+    }
+  })
+}
+  // Change code above this line
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
     }
   }
-  render() {
-    // Change code below this line
-const name = this.state.name;
-    // Change code above this line
-    return (
-      <div>
-        { /* Change code below this line */ }
-<h1>{name}</h1>
-        { /* Change code above this line */ }
-      </div>
-    );
-  }
-};
+}
