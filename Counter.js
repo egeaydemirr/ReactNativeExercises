@@ -19,9 +19,9 @@ class Counter extends React.Component{
     }))
   }
   sifirla(){
-    this.setState(state=>({
+    this.setState({
       sayi: 0
-    }))
+    })
   }
   render(){
     return(
